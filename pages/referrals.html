@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referrals - Queen Bee</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+.header {
+    background: #ffc107;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.referral-link {
+    background: #eee;
+    padding: 15px;
+    border-radius: 10px;
+    word-break: break-all;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #ffc107;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stat-box {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    width: 45%;
+    text-align: center;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+🐝 Queen Bee - Referrals
+</div>
+
+<div class="container">
+
+<div class="card">
+<div class="title">Your Referral Link</div>
+
+<div class="referral-link" id="link">
+https://queenbee.com/register?ref=USER123
+</div>
+
+<br>
+
+<button onclick="copyLink()">
+Copy Link
+</button>
+
+</div>
+
+
+<div class="card">
+
+<div class="title">
+Referral Statistics
+</div>
+
+<div class="stats">
+
+<div class="stat-box">
+<h2>0</h2>
+<p>Friends Joined</p>
+</div>
+
+<div class="stat-box">
+<h2>$0.00</h2>
+<p>Referral Earnings</p>
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="title">
+How it works
+</div>
+
+<p>
+1. Share your referral link.</p>
+
+<p>
+2. Your friends create an account.</p>
+
+<p>
+3. You earn commissions from their activity.
+</p>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+function copyLink(){
+
+let link = document.getElementById("link").innerText;
+
+navigator.clipboard.writeText(link);
+
+alert("Referral link copied!");
+
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Watch Ads - Queen Bee</title>
+
+<link rel="stylesheet" href="../style.css">
+
+<style>
+
+.watch-container{
+
+max-width:700px;
+margin:40px auto;
+background:#151515;
+padding:30px;
+border-radius:15px;
+text-align:center;
+
+}
+
+.watch-container h1{
+
+color:#f7c600;
+margin-bottom:20px;
+
+}
+
+#ad-box{
+
+height:250px;
+background:#222;
+border:2px dashed #f7c600;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+margin:30px 0;
+border-radius:15px;
+
+}
+
+.timer{
+
+font-size:45px;
+font-weight:bold;
+color:#f7c600;
+margin:20px 0;
+
+}
+
+#reward{
+
+display:none;
+margin-top:20px;
+font-size:22px;
+color:#4CAF50;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="sidebar" id="sidebar">
+
+<div class="logo">
+🐝 Queen Bee
+</div>
+
+<ul>
+
+<li><a href="dashboard.html">📊 Dashboard</a></li>
+
+<li><a href="watch-ads.html">📺 Watch Ads</a></li>
+
+<li><a href="referrals.html">👥 Referrals</a></li>
+
+<li><a href="withdraw.html">💳 Withdraw</a></li>
+
+<li><a href="earnings.html">📜 Earnings</a></li>
+
+</ul>
+
+</div>
+
+<div class="main">
+
+<header>
+
+<button class="menu-btn" onclick="toggleMenu()">
+☰
+</button>
+
+<h2>Watch Ads</h2>
+
+</header>
+
+<div class="watch-container">
+
+<h1>Watch Advertisement</h1>
+
+<div id="ad-box">
+
+Advertisement Area
+
+</div>
+
+<div class="timer" id="timer">
+
+15
+
+</div>
+
+<button class="watch-btn" onclick="startAd()">
+
+Start Watching
+
+</button>
+
+<div id="reward">
+
+🎉 Congratulations! You earned <b>$0.01</b>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="../app.js"></script>
+
+<script>
+
+let running=false;
+
+function startAd(){
+
+if(running) return;
+
+running=true;
+
+let time=15;
+
+document.getElementById("reward").style.display="none";
+
+let timer=document.getElementById("timer");
+
+timer.innerHTML=time;
+
+let x=setInterval(function(){
+
+time--;
+
+timer.innerHTML=time;
+
+if(time<=0){
+
+clearInterval(x);
+
+timer.innerHTML="✓";
+
+document.getElementById("reward").style.display="block";
+
+running=false;
+
+}
+
+},1000);
+
+}
+
+</script>
+
+</body>
+</html>
